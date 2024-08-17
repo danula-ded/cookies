@@ -56,7 +56,7 @@
                 <div class="products-item-price">{{product.price}} {{currency}}</div>
                 <div class="products-item-weight">{{product.weight}}</div>
               </div>
-              <button class="button violet-button" (click)="scroolTo(order)">Заказать</button>
+              <button class="button violet-button" (click)="scroolTo(order, product)">Заказать</button>
             </div>
           </div>
         </div>
@@ -94,7 +94,8 @@
           </div>
           <div class="order-form-inputs" [formGroup]="form">
             <input type="text" placeholder="Выберите печенье" id="product" formControlName="product"
-              [class]="{'error': form.get('product')?.invalid && (form.get('product')?.dirty || form.get('product')?.touched)}">
+              [class]="{'error': form.get('product')?.invalid && (form.get('product')?.dirty || form.get('product')?.touched)}"
+              readonly>
             <input type="text" placeholder="Ваше имя" id="userName" formControlName="userName"
               [class]="{'error': form.get('userName')?.invalid && (form.get('userName')?.dirty || form.get('userName')?.touched)}">
             <input type=" tel" placeholder="Ваш телефон" id="phone" formControlName="phone"
