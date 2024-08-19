@@ -34,7 +34,7 @@
           <button class="button" id="main-action-button" (click)="scroolTo(products)">Заказать</button>
         </div>
       </div>
-      <img src="./assets/images/cookie.png" alt="cookie" class="main-image">
+      <img src="./assets/images/cookie.png" alt="cookie" class="main-image" [ngStyle]="mainImageStyle">
     </div>
   </section>
   <section class="products" id="products" #products>
@@ -111,7 +111,7 @@
           </div>
         </div>
         <div class="order-block-image">
-          <img src="./assets/images/order.png" alt="Cookies" class="order-image">
+          <img src="./assets/images/order.png" alt="Cookies" class="order-image" [ngStyle]="orderImageStyle">
         </div>
       </div>
     </div>
@@ -123,3 +123,7 @@
     <div class="rights">«Все права защищены»</div>
   </footer>
 </main>
+
+<div class="loader" [class]="{'showed': loaderShowed}" *ngIf="loader">
+  <lottie-player src="./assets/cookie.json" background="transparent" speed="1.5" autoplay></lottie-player>
+</div>
